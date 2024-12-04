@@ -1,14 +1,12 @@
 ---
-title: CBR XYZ
+title: CBR Custom Open Security Summit
 ---
 
-# cbr-xyz
-Repo for XYZ (replace with name of project). 
-
-This is the template for the other projects and builds up the main CI/CD pipeline
+# cbr-custom-open-sec-summit
+Repo for CBR Custom Open Security Summit 
 
 
 ## Repo details
 
-![Current Release](https://img.shields.io/badge/release-v0.8.1-blue)
+![Current Release](https://img.shields.io/badge/release-v0.0.2-blue)
 

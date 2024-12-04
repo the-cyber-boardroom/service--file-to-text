@@ -1,0 +1,8 @@
+services:
+  cbr_custom_open_sec_summit:
+    build:
+      context: ../../..
+      dockerfile: ./deploy/docker/cbr_custom/Dockerfile
+    platform: linux/amd64
+    container_name: cbr_custom_open_sec_summit
+    tty: true
