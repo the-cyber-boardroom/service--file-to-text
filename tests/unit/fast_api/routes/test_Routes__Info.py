@@ -16,4 +16,4 @@ class test_Routes__Info(TestCase):
         with self.routes_info as _:
             assert _.routes_paths() == []
             _.setup_routes()
-            assert _.routes_paths() == ['/version' , '/ping']
+            assert _.routes_paths() == ['/ping', '/version' ]
