@@ -1,7 +1,9 @@
 from unittest                                     import TestCase
 from osbot_fast_api.utils.Fast_API_Server         import Fast_API_Server
-from cbr_custom_open_sec_summit.utils.Version          import version__cbr_custom_open_sec_summit
-from tests.integration.open_sec_summit__objs_for_tests import open_sec_summit__fast_api__app
+
+from cbr_custom_open_sec_summit.testing.open_sec_summit__objs_for_tests import open_sec_summit__fast_api__app
+from cbr_custom_open_sec_summit.utils.Version                           import version__cbr_custom_open_sec_summit
+
 
 
 class test__http__Routes__Info(TestCase):
