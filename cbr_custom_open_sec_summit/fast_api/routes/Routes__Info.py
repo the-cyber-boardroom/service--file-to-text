@@ -8,7 +8,7 @@ class Routes__Info(Fast_API_Routes):
 
     def ping(self):
         return 'pong (edited on live OSS session)'
-    
+
     def version(self):
         return {'version': version__cbr_custom_open_sec_summit}
 
