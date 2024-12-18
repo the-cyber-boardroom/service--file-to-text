@@ -9,15 +9,16 @@ homepage    = "https://github.com/the-cyber-boardroom/cbr-custom--open-sec-summi
 repository  = "https://github.com/the-cyber-boardroom/cbr-custom--open-sec-summit"
 
 [tool.poetry.dependencies]
-python          = "^3.11"
-osbot-utils     = "*"
-osbot-aws       = "*"
-osbot-fast-api  = "*"
-mangum          = "*"
-httpx           = "*"
-uvicorn         = "*"
-bs4             = "*"
-markitdown      = "*"
+python           = "^3.11"
+osbot-utils      = "*"
+osbot-aws        = "*"
+osbot-fast-api   = "*"
+mangum           = "*"
+httpx            = "*"
+uvicorn          = "*"
+bs4              = "*"
+markitdown       = "*"
+python-multipart = "*"
 
 [build-system]
 requires        = ["poetry-core>=1.0.0"]
