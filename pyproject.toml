@@ -1,6 +1,6 @@
 [tool.poetry]
 name        = "cbr_custom_open_sec_summit"
-version     = "v0.4.0"
+version     = "v0.4.1"
 description = "CBR Custom - Open Security Summit"
 authors     = ["Dinis Cruz <dinis.cruz@owasp.org>"]
 license     = "Apache 2.0"
@@ -17,6 +17,7 @@ mangum          = "*"
 httpx           = "*"
 uvicorn         = "*"
 bs4             = "*"
+markitdown      = "*"
 
 [build-system]
 requires        = ["poetry-core>=1.0.0"]

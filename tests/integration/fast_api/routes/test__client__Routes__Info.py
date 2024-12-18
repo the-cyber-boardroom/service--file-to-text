@@ -1,6 +1,7 @@
-from unittest                                           import TestCase
-from cbr_custom_open_sec_summit.utils.Version           import version__cbr_custom_open_sec_summit
-from tests.integration.open_sec_summit__objs_for_tests  import open_sec_summit__fast_api__client
+from unittest                                                           import TestCase
+from cbr_custom_open_sec_summit.testing.open_sec_summit__objs_for_tests import open_sec_summit__fast_api__client
+from cbr_custom_open_sec_summit.utils.Version                           import version__cbr_custom_open_sec_summit
+
 
 
 class test__client__Routes__Info(TestCase):

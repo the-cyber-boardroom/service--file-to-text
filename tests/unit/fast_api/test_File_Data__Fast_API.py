@@ -1,6 +1,7 @@
 from unittest                                            import TestCase
 from cbr_custom_open_sec_summit.fast_api.Open_Sec_Summit__Fast_API import Open_Sec_Summit__Fast_API
 from cbr_custom_open_sec_summit.fast_api.routes.Routes__Info  import ROUTES_PATHS__INFO
+from cbr_custom_open_sec_summit.fast_api.routes.Routes__Markitdown import ROUTES_PATHS__MARKITDOWN
 
 
 class test_Open_Sec_Summit__Fast_API(TestCase):
@@ -17,7 +18,8 @@ class test_Open_Sec_Summit__Fast_API(TestCase):
         routes = self.fast_api.routes_paths()
 
         assert routes == sorted(['/', '/config/info', '/config/status', '/config/version'] \
-                                 + ROUTES_PATHS__INFO                                      )
+                                 + ROUTES_PATHS__INFO                                      \
+                                 + ROUTES_PATHS__MARKITDOWN                                )
 
 
 
