@@ -5,6 +5,7 @@ RUN pip install osbot-aws osbot-fast-api
 RUN pip install cbr_custom_open_sec_summit
 
 RUN pip install markitdown
+RUN pip install python-multipart
 
 COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:0.8.4 /lambda-adapter /opt/extensions/lambda-adapter
 
