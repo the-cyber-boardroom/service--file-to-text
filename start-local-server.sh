@@ -1,1 +1,1 @@
-uvicorn cbr_custom_open_sec_summit.lambdas.handler:app --reload --host 0.0.0.0 --port 7771
+uvicorn service_file_to_text.lambdas.handler:app --reload --host 0.0.0.0 --port 7771

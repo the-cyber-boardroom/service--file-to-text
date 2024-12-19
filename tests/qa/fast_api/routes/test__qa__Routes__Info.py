@@ -2,7 +2,7 @@ import pytest
 import requests
 from unittest                                 import TestCase
 from osbot_utils.utils.Env                    import not_in_github_action
-from cbr_custom_open_sec_summit.utils.Version       import version__cbr_custom_open_sec_summit
+from service_file_to_text.utils.Version       import version__service_file_to_text
 from deploy.lambdas.Deploy_Lambda__Cbr_Custom import Deploy_Lambda__Cbr_Custom
 
 
@@ -26,4 +26,4 @@ class test__qa__Routes__Info(TestCase):
             pytest.skip("This test can only be executed in GH Actions after the deployment of the latest lambda")
         response = self.requests_get('info/version')
         assert response.status_code == 200
-        assert response.json() == {'version': version__cbr_custom_open_sec_summit}
+        assert response.json() == {'version': version__service_file_to_text}

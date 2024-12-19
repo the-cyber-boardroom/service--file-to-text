@@ -1,7 +1,7 @@
 from unittest                               import TestCase
 from starlette.testclient                   import TestClient
 
-from cbr_custom_open_sec_summit.lambdas.handler import app
+from service_file_to_text.lambdas.handler import app
 
 
 class test__int__handler(TestCase):

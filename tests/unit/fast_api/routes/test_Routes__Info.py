@@ -1,6 +1,6 @@
 from unittest                                           import TestCase
-from cbr_custom_open_sec_summit.fast_api.routes.Routes__Info import Routes__Info
-from cbr_custom_open_sec_summit.utils.Version                import version__cbr_custom_open_sec_summit
+from service_file_to_text.fast_api.routes.Routes__Info import Routes__Info
+from service_file_to_text.utils.Version                import version__service_file_to_text
 
 
 class test_Routes__Info(TestCase):
@@ -10,7 +10,7 @@ class test_Routes__Info(TestCase):
         cls.routes_info = Routes__Info()
 
     def test_version(self):
-        assert self.routes_info.version() == {'version': version__cbr_custom_open_sec_summit}
+        assert self.routes_info.version() == {'version': version__service_file_to_text}
 
     def test_setup_routes(self):
         with self.routes_info as _:

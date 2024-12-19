@@ -5,7 +5,7 @@ import tempfile
 import os
 from osbot_utils.utils.Threads import invoke_async
 
-import cbr_custom_open_sec_summit
+import service_file_to_text
 
 
 class Markitdown_Service:
@@ -44,7 +44,7 @@ class Markitdown_Service:
                     os.unlink(temp_file.name)
 
     def process_local_file(self, file_path: str) -> str:
-        full_path = path_combine(cbr_custom_open_sec_summit.path, file_path)
+        full_path = path_combine(service_file_to_text.path, file_path)
         if not file_exists(full_path):
             raise HTTPException(status_code=404, detail=f"File not found: {file_path}")
 
@@ -61,7 +61,7 @@ class Markitdown_Service:
         if file_exists(file_path):
             full_path = file_path
         else:
-            full_path = path_combine(cbr_custom_open_sec_summit.path, file_path)
+            full_path = path_combine(service_file_to_text.path, file_path)
         if not file_exists(full_path):
             raise HTTPException(status_code=404, detail=f"File not found: {file_path}")
 

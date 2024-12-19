@@ -8,9 +8,9 @@ on:
 env:
   GIT__BRANCH      : 'main'
   RELEASE_TYPE     : 'major'
-  PACKAGE_NAME     : 'cbr_custom_open_sec_summit'
+  PACKAGE_NAME     : 'service_file_to_text'
   DOCKER__CONTEXT  : "."
-  DOCKER__FILE     : './deploy/docker/cbr_custom/Dockerfile'
+  DOCKER__FILE     : './deploy/docker/service/Dockerfile'
 
 jobs:
 

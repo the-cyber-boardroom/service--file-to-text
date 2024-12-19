@@ -1,9 +1,9 @@
 ---
-title: CBR Custom Open Security Summit
+title: Service - File to Text
 ---
 
-# cbr-custom-open-sec-summit
-Repo for CBR Custom Open Security Summit 
+# service-file-to-text
+Repo for the File to Text Service 
 
 
 ## Repo details

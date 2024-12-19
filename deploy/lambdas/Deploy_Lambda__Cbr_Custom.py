@@ -2,11 +2,11 @@ from osbot_utils.utils.Env                  import get_env, load_dotenv
 from osbot_aws.AWS_Config                   import aws_config
 from osbot_utils.base_classes.Type_Safe     import Type_Safe
 from osbot_aws.deploy.Deploy_Lambda         import Deploy_Lambda
-from cbr_custom_open_sec_summit.utils.Version    import version__cbr_custom_open_sec_summit
+from service_file_to_text.utils.Version    import version__service_file_to_text
 
 
 class Deploy_Lambda__Cbr_Custom(Type_Safe):
-    lambda_name : str = 'cbr_custom_open_sec_summit'
+    lambda_name : str = 'service_file_to_text'
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -40,7 +40,7 @@ class Deploy_Lambda__Cbr_Custom(Type_Safe):
         account_id  = aws_config.account_id()
         region_name = aws_config.region_name()
         image_name  = self.lambda_name
-        image_tag   = version__cbr_custom_open_sec_summit
+        image_tag   = version__service_file_to_text
         return f'{account_id}.dkr.ecr.{region_name}.amazonaws.com/{image_name}:{image_tag}'
 
     def setup_aws_credentials(self):

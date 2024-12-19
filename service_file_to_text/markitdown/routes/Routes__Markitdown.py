@@ -2,7 +2,7 @@ from fastapi                                                    import UploadFil
 from osbot_fast_api.api.Fast_API_Routes                         import Fast_API_Routes
 from starlette.responses import PlainTextResponse
 
-from cbr_custom_open_sec_summit.markitdown.Markitdown_Service   import Markitdown_Service
+from service_file_to_text.markitdown.Markitdown_Service   import Markitdown_Service
 
 ROUTES_PATHS__MARKITDOWN = ['/markitdown/markitdown-jpg',
                             '/markitdown/markitdown-pdf',

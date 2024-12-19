@@ -1,5 +1,5 @@
 from unittest                                 import TestCase
-from cbr_custom_open_sec_summit.utils.Version       import version__cbr_custom_open_sec_summit
+from service_file_to_text.utils.Version       import version__service_file_to_text
 from deploy.lambdas.Deploy_Lambda__Cbr_Custom import Deploy_Lambda__Cbr_Custom
 
 
@@ -17,4 +17,4 @@ class test_Deploy_Lambda__Cbr_Custom(TestCase):
     def test_ecr_image_uri(self):
         with self.deploy_lambda as _:
             ecr_image_uri = _.ecr_image_uri()       # todo: change values below to aws_config.account_id() and aws_config.region_name()
-            assert ecr_image_uri == f'654654216424.dkr.ecr.eu-west-1.amazonaws.com/osbot_flows:{version__cbr_custom_open_sec_summit}'
+            assert ecr_image_uri == f'654654216424.dkr.ecr.eu-west-1.amazonaws.com/osbot_flows:{version__service_file_to_text}'

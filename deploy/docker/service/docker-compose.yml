@@ -1,0 +1,10 @@
+services:
+  service_file_to_text:
+    build:
+      context: ../../..
+      dockerfile: ./deploy/docker/service/Dockerfile
+    platform: linux/amd64
+    container_name: service_file_to_text
+    tty: true
+    ports:
+      - "8080:8080"
