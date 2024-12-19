@@ -1,8 +1,8 @@
 from unittest                                     import TestCase
 from osbot_fast_api.utils.Fast_API_Server         import Fast_API_Server
 
-from cbr_custom_open_sec_summit.testing.open_sec_summit__objs_for_tests import open_sec_summit__fast_api__app
-from cbr_custom_open_sec_summit.utils.Version                           import version__cbr_custom_open_sec_summit
+from service_file_to_text.testing.file_to_text__objs_for_tests import file_to_text__fast_api__app
+from service_file_to_text.utils.Version                           import version__service_file_to_text
 
 
 
@@ -10,7 +10,7 @@ class test__http__Routes__Info(TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.fast_api_server = Fast_API_Server(app=open_sec_summit__fast_api__app)
+        cls.fast_api_server = Fast_API_Server(app=file_to_text__fast_api__app)
         cls.fast_api_server.start()
         assert cls.fast_api_server.is_port_open() is True
 
@@ -22,4 +22,4 @@ class test__http__Routes__Info(TestCase):
     def test_http__uk__articles_html(self):
         response = self.fast_api_server.requests_get('/info/version')
         assert response.status_code == 200
-        assert response.json()      == {'version': version__cbr_custom_open_sec_summit }
+        assert response.json()      == {'version': version__service_file_to_text }

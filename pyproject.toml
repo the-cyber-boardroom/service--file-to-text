@@ -1,12 +1,12 @@
 [tool.poetry]
-name        = "cbr_custom_open_sec_summit"
-version     = "v0.7.0"
-description = "CBR Custom - Open Security Summit"
+name        = "service_file_to_text"
+version     = "v0.1.1"
+description = "Service - File to Text"
 authors     = ["Dinis Cruz <dinis.cruz@owasp.org>"]
 license     = "Apache 2.0"
 readme      = "README.md"
-homepage    = "https://github.com/the-cyber-boardroom/cbr-custom--open-sec-summit"
-repository  = "https://github.com/the-cyber-boardroom/cbr-custom--open-sec-summit"
+homepage    = "https://github.com/the-cyber-boardroom/service--file-to-text"
+repository  = "https://github.com/the-cyber-boardroom/service--file-to-text"
 
 [tool.poetry.dependencies]
 python           = "^3.11"

@@ -1,13 +1,13 @@
-from unittest                                                        import TestCase
-from cbr_custom_open_sec_summit.fast_api.Open_Sec_Summit__Fast_API   import Open_Sec_Summit__Fast_API
-from cbr_custom_open_sec_summit.fast_api.routes.Routes__Info         import ROUTES_PATHS__INFO
-from cbr_custom_open_sec_summit.markitdown.routes.Routes__Markitdown import ROUTES_PATHS__MARKITDOWN
+from unittest                                                  import TestCase
+from service_file_to_text.fast_api.File_To_Text__Fast_API      import File_To_Text__Fast_API
+from service_file_to_text.fast_api.routes.Routes__Info         import ROUTES_PATHS__INFO
+from service_file_to_text.markitdown.routes.Routes__Markitdown import ROUTES_PATHS__MARKITDOWN
 
 
-class test_Open_Sec_Summit__Fast_API(TestCase):
+class test_File_To_Text__Fast_API(TestCase):
 
     def setUp(self):
-        self.fast_api = Open_Sec_Summit__Fast_API()
+        self.fast_api = File_To_Text__Fast_API()
 
     def test_base_path(self):
         assert self.fast_api.base_path == '/'
