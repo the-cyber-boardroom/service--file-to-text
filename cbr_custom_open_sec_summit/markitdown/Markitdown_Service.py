@@ -3,7 +3,6 @@ from markitdown import MarkItDown
 from osbot_utils.utils.Files import file_exists, save_bytes_as_file, path_combine
 import tempfile
 import os
-
 from osbot_utils.utils.Threads import invoke_async
 
 import cbr_custom_open_sec_summit
@@ -56,3 +55,14 @@ class Markitdown_Service:
 
         except Exception as e:
             raise HTTPException(status_code=500, detail=f"Error processing file: {str(e)}")
+
+    def process_image(self, file_path: str) -> str:
+        full_path = path_combine(cbr_custom_open_sec_summit.path, file_path)
+        if not file_exists(full_path):
+            raise HTTPException(status_code=404, detail=f"File not found: {file_path}")
+
+        from PIL import Image
+        import pytesseract
+
+        text = pytesseract.image_to_string(Image.open(full_path))
+        return text
