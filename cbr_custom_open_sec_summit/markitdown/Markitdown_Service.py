@@ -1,9 +1,8 @@
 from fastapi import UploadFile, HTTPException
 from markitdown import MarkItDown
-from osbot_utils.utils.Files import file_exists, save_bytes_as_file, path_combine
+from osbot_utils.utils.Files import file_exists, save_bytes_as_file, path_combine, file_extension
 import tempfile
 import os
-
 from osbot_utils.utils.Threads import invoke_async
 
 import cbr_custom_open_sec_summit
@@ -27,7 +26,8 @@ class Markitdown_Service:
 
                 # Save to temporary file
                 save_bytes_as_file(content, temp_file.name)
-
+                if file_extension(file.filename) in ['.png', '.jpg', '.jpeg', '.gif']:
+                    return self.process_image(temp_file.name)
                 # Process with MarkItDown
                 result = self.markitdown.convert(temp_file.name)
 
@@ -56,3 +56,17 @@ class Markitdown_Service:
 
         except Exception as e:
             raise HTTPException(status_code=500, detail=f"Error processing file: {str(e)}")
+
+    def process_image(self, file_path: str) -> str:
+        if file_exists(file_path):
+            full_path = file_path
+        else:
+            full_path = path_combine(cbr_custom_open_sec_summit.path, file_path)
+        if not file_exists(full_path):
+            raise HTTPException(status_code=404, detail=f"File not found: {file_path}")
+
+        from PIL import Image
+        import pytesseract
+
+        text = pytesseract.image_to_string(Image.open(full_path))
+        return text

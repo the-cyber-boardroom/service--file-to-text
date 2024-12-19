@@ -4,7 +4,10 @@ from starlette.responses import PlainTextResponse
 
 from cbr_custom_open_sec_summit.markitdown.Markitdown_Service   import Markitdown_Service
 
-ROUTES_PATHS__MARKITDOWN = ['/markitdown/markitdown-pdf',  '/markitdown/markitdown-xslx', '/markitdown/markitdown-upload']
+ROUTES_PATHS__MARKITDOWN = ['/markitdown/markitdown-jpg',
+                            '/markitdown/markitdown-pdf',
+                            '/markitdown/markitdown-xslx',
+                            '/markitdown/markitdown-upload']
 
 class Routes__Markitdown(Fast_API_Routes):
     tag     : str = 'markitdown'
@@ -15,8 +18,12 @@ class Routes__Markitdown(Fast_API_Routes):
         markdown = self.service.process_file(file)
         return PlainTextResponse(markdown)
 
+    def markitdown_jpg(self) -> str:
+        file_path = 'markitdown/sample_files/test.jpg'
+        markdown  = self.service.process_image(file_path)
+        return PlainTextResponse(markdown)
+
     def markitdown_pdf(self) -> str:
-        """Process a sample PDF file."""
         file_path = 'markitdown/sample_files/sample.pdf'
         markdown  = self.service.process_local_file(file_path)
         return PlainTextResponse(markdown)
@@ -27,6 +34,7 @@ class Routes__Markitdown(Fast_API_Routes):
         return markdown
 
     def setup_routes(self):
-        self.add_route_get (self.markitdown_xslx)
+        self.add_route_get (self.markitdown_jpg)
         self.add_route_get (self.markitdown_pdf)
+        self.add_route_get (self.markitdown_xslx)
         self.add_route_post(self.markitdown_upload)
