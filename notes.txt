@@ -1,0 +1,6 @@
+## Notes
+
+- https://github.com/microsoft/markitdown/
+- https://github.com/madmaze/pytesseract
+
+- https://ds4sd.github.io/docling/ looks like another good package for file to text conversions
